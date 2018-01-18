@@ -39,5 +39,11 @@ CREATE TABLE IF NOT EXISTS `favorits` (
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `icon` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `country` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `homebase` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sunrise` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sunset` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `coordlat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `coordlon` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+`unit` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

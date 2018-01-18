@@ -1,4 +1,5 @@
 <?php
+
 class weatherinfo {
 
 //Deklaration der Membervariabeln
@@ -20,6 +21,9 @@ class weatherinfo {
     private $mUrlcoordinates;
     private $mUnit;
     private $mWeatherIcon;
+    private $mSunset;
+    private $mSunrise;
+
 
     function __construct($pLat, $pLon, $pUnit) {//Konstruktor der Klasse weatherinfo
         $this->mCoordLat = $pLat;
@@ -27,9 +31,9 @@ class weatherinfo {
         $this->mUnit = $pUnit;
         $this->mUrlcoordinates = "api.openweathermap.org/data/2.5/weather?lat=$this->mCoordLat&lon=$this->mCoordLon&units=$this->mUnit&lang=de&appid=$this->mApikey";
         $this->owmApiCall(); //Ruft die API Abfrage von OpenWeatherMap auf
-    }//End Constructor
+    }
 
-
+//End Constructor
 //API Abfrage
     private function owmApiCall() {
         //curl wird ausgeführt	
@@ -56,12 +60,13 @@ class weatherinfo {
         $this->mWindDeg = $obj['wind']["deg"];
         $this->mCloudsAll = $obj['clouds']["all"];
         $this->mCountry = $obj['sys']["country"];
+        $this->mSunrise = $obj['sys']["sunrise"];
+        $this->mSunset = $obj['sys']["sunset"];
         $this->mCity = $obj['name'];
-    }//End API Abfrage
+    }
 
-
+//End API Abfrage
 //Getter
-
     public function getCoordLon() {
         return $this->mCoordLon;
     }
@@ -71,14 +76,13 @@ class weatherinfo {
     }
 
     public function getWeatherMain() {
-        echo $this->mWeatherMain;
         return $this->mWeatherMain;
     }
 
     public function getWeatherDescription() {
         return $this->mWeatherDescription;
     }
-    
+
     public function getWeatherIcon() {
         return $this->mWeatherIcon;
     }
@@ -119,13 +123,21 @@ class weatherinfo {
     public function getCity() {
         return $this->mCity;
     }
-    
+
     public function getUrl() {
         return $this->mUrlcoordinates;
     }
-    
+
     public function getCountry() {
         return $this->mCountry;
     }
 
+    public function getSunrise() {
+        return $this->mSunrise;
+    }
+
+    public function getSunset() {
+        return $this->mSunset;
+    }
 }//End Class weatherinfo
+

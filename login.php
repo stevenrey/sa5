@@ -27,7 +27,7 @@ if(isset($_POST['email']) && isset($_POST['passwort'])) {
 			setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
 		}
 
-		header("location: internal.php");
+		header("location: mapscreen.php");
 		exit;
 	} else {
 		$error_msg =  "E-Mail oder Passwort war ungültig<br><br>";
@@ -44,8 +44,9 @@ include("templates/header.inc.php");
  <div class="container small-container-330 form-signin">
   <form action="login.php" method="post">
 	<h2 class="form-signin-heading">Login</h2>
-	
 <?php 
+
+
 if(isset($error_msg) && !empty($error_msg)) {
 	echo $error_msg;
 }
@@ -60,10 +61,14 @@ if(isset($error_msg) && !empty($error_msg)) {
 	  </label>
 	</div>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        
 	<br>
-	<a href="passwortvergessen.php">Passwort vergessen</a>
+	
   </form>
-
+     <form action="register.php" method="post">
+<button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
+</form>
+     <a href="passwortvergessen.php">Passwort vergessen</a>
 </div> <!-- /container -->
  
 

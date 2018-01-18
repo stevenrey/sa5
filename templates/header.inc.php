@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><i class="glyphicon glyphicon-leaf logo"></i> Unternehmenslogo</a>
+          <a class="navbar-brand" href="index.php"><img id="logo" src="/images/logo.png" height="35" width="35"> </a>
         </div>
         <?php if(!is_checked_in()): ?>
         <div id="navbar" class="navbar-collapse collapse">
@@ -57,8 +57,7 @@
         </div><!--/.navbar-collapse -->
         <?php else: ?>
         <div id="navbar" class="navbar-collapse collapse">
-         <ul class="nav navbar-nav navbar-right">     
-         	<li><a href="internal.php">Interner Bereich</a></li>       
+         <ul class="nav navbar-nav navbar-right">      
             <li><a href="settings.php">Einstellungen</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>   
